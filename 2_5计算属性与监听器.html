@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性与监听器</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+	<div id="app">
+	姓：<input v-model="firstName">
+	名：<input v-model="lastName">
+	<h1>{{fullName}}</h1>
+	<h1>{{count}}</h1>
+	</div>
+	<script>
+		var app=new Vue({
+			el:"#app",
+			data: {
+				firstName:"",
+				lastName:"",
+				count: 0
+			},
+			methods:{
+				handelClick: function(){
+					this.message="amazing";
+					alert(123);
+				}
+			},
+			computed:{
+				fullName: function(){
+					return this.firstName+" "+this.lastName;
+				}
+			},
+			watch:{
+				firstName: function(){
+					this.count++;
+				},
+				lastName: function(){
+					this.count++;
+				}
+			}
+		})
+	</script>
+ 
+</body>
+</html>

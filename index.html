@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+	<div id="app">
+	<h1 v-on:click="handelClick">{{message}}</h1>
+	</div>
+	<script>
+		var app=new Vue({
+			el:"#app",
+			data: {
+				message: "hello vue123"
+			},
+			methods:{
+				handelClick: function(){
+					this.message="amazing";
+					alert(123);
+				}
+			}
+		})
+	</script>
+ 
+</body>
+</html>
